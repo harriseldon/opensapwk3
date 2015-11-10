@@ -1,0 +1,23 @@
+<mvc:View controllerName="suppliers.view.Detail" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page class="sapUiFioriObjectPage" navButtonPress="onNavBack" showNavButton="{device>/isPhone}" title="{i18n>detailTitle}">
+		<content>
+			<ObjectHeader number="{SupplierID}" numberUnit="{Address}" title="{CompanyName}">
+				<ObjectAttribute text="{Address}"/>
+				<ObjectAttribute text="{City}"/>
+			</ObjectHeader>
+			<IconTabBar id="idIconTabBar" select="onDetailSelect">
+				<items>
+					<IconTabFilter icon="sap-icon://hint" key="" text="">
+						<!--key="Detail" -->
+						<content>
+							<core:Fragment fragmentName="suppliers.view.DetailInfoForm" type="XML"/>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Toolbar></Toolbar>
+		</footer>
+	</Page>
+</mvc:View>
